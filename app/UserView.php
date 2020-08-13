@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 
-class User extends Authenticatable
+class UserView extends Authenticatable
 {
     use Notifiable;
 
@@ -17,8 +17,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
-//
+        //'name', 'email', 'password',
+        'name', 'email', 'password', 'provider', 'provider_id',
     ];
 
     /**
@@ -39,8 +39,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $table = 'users_facebook';
 
-    protected $table = 'users';
     public function comment()
     {
         return $this->hasMany('App\Model\Comment','idUser','id');

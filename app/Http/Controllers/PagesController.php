@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\UserView;
 use Illuminate\Http\Request;
 use App\Model\Categories;
 use App\Model\Slider;
 use App\Model\TypeNews;
 use App\Model\News;
 use Illuminate\Support\Facades\Auth;
+
 
 class PagesController extends Controller
 {

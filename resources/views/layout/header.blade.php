@@ -83,7 +83,7 @@
                             <!-- Heder social -->
                             <ul class="header-social">
                                 @if(Auth::user())
-                                    <li><i class="text-white far fa-user-circle"></i><a href="">{{Auth::user()->name}}</a></li>
+                                    <li><i class="text-white far fa-user-circle"></i><a href="{{route('user-info')}}">{{Auth::user()->name}}</a></li>
                                     <li><a href="{{route('user-logout')}}"><i class="far fa-arrow-alt-circle-left"></i></a></li>
                                 @else
                                     <li><a href="{{route('user-login')}}">ĐĂNG NHẬP</a></li>
