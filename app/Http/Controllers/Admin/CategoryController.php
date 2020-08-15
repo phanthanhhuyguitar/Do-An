@@ -68,7 +68,7 @@ class CategoryController extends Controller
         $cate -> TenKhongDau = changeTitle($request->cateName);
         $cate->save();
 
-        return redirect(route('admin.category.edit',['id'=>$id]))->with('thongbao','Sua thanh cong');
+        return redirect(route('admin.category.list'))->with('thongbao','Sua thanh cong');
 
     }
 

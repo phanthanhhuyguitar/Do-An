@@ -72,7 +72,7 @@ class TypeController extends Controller
         $type->idTheLoai = $request->category;
         $type->save();
 
-        return redirect(route('admin.type.edit',$id))->with('thongbao','Ban da sua thanh cong');
+        return redirect(route('admin.type.list'))->with('thongbao','Ban da sua thanh cong');
     }
 
     public function getDelete($id)

@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <h1 class="page-hea">News
                     <small>List</small>
-                    <a class="btn-success btn" href="">Add <i class="far fa-plus-square"></i></a>
+                    <a class="btn-success btn" href="{{route('admin.news.add')}}">Add <i class="far fa-plus-square"></i></a>
                 </h1>
                 <div class="ml-auto text-right">
 
@@ -42,7 +42,7 @@
                         <p>{{$ns->TieuDe}}</p>
                         <img width="100px" src="{{asset("upload/tintuc/$ns->Hinh")}}" alt="">
                     </td>
-                    <td>{{strip_tags($ns->TomTat)}}</td>
+                    <td>{!! strip_tags($ns->TomTat) !!}</td>
                     {{--tro theo ten ham trong model lien ket--}}
                     <td>{{$ns->typeNews->categories->Ten}}</td>
                     <td>{{$ns->typeNews->Ten}}</td>

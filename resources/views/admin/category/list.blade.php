@@ -31,8 +31,8 @@
                     <td>{{$ct->id}}</td>
                     <td>{{$ct->Ten}}</td>
                     <td>{{$ct->TenKhongDau}}</td>
-                    <td class="center text-primary"><i class="far fa-edit"></i><a href="{{route('admin.category.delete',['id'=>$ct->id])}}"> Delete</a></td>
-                    <td class="center text-danger"><i class="far fa-trash-alt"></i><a style="margin-left: 3px" class="ml-3" href="{{route('admin.category.edit',['id'=>$ct->id])}}">Edit</a></td>
+                    <td class="center text-danger"><i class="far fa-trash-alt"></i><a href="{{route('admin.category.delete',['id'=>$ct->id])}}"> Delete</a></td>
+                    <td class="center text-success"><i class="far fa-edit"></i><a href="{{route('admin.category.edit',['id'=>$ct->id])}}">Edit</a></td>
                 </tr>
                 @endforeach
                 </tbody>

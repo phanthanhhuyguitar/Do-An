@@ -9,6 +9,9 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <base href="{{asset('')}}">
+
+    <script data-ad-client="ca-pub-6041994811184344" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">

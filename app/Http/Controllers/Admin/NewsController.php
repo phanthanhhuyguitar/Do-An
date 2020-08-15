@@ -57,7 +57,7 @@ class NewsController extends Controller
         if($request->hasFile('image')){
             $file = $request->file('image');
             $backFile = $file->getClientOriginalExtension();
-            if($backFile != 'jpg' && $backFile != 'jpeg' && $backFile != 'png'){
+            if($backFile != 'jpg' && $backFile != 'jpeg' && $backFile != 'png' && $backFile != 'gif'){
                 return redirect(route('admin.news.add'))->with('loi','Ban chi duoc chon file co duoi jpg, jpeg, png');
             }
             $name = $file->getClientOriginalName();
@@ -89,7 +89,7 @@ class NewsController extends Controller
         $this->validate($request,
             [
                 'typenews' => 'required',
-                'title' => 'required|min:3|unique:tintuc,TieuDe',
+//                'title' => 'required|min:3|unique:tintuc,TieuDe',
                 'post_content' => 'required', //tom tat
                 'post_content_1' => 'required' //noi dung
             ],
@@ -97,7 +97,7 @@ class NewsController extends Controller
                 'typenews.required' => 'Ban chua chon loai tin',
                 'title.required' => 'Ban chua nhap tieu de',
                 'title.min' => 'Tieu de phai co it nhat 3 ki tu',
-                'title.unique' => 'Tieu de da ton tai',
+//                'title.unique' => 'Tieu de da ton tai',
                 'post_content.required' => 'Ban chua nhao tom tat',
                 'post_content_1' => 'Ban chua nhap noi dung'
             ]);
@@ -109,9 +109,12 @@ class NewsController extends Controller
         $news->NoiBat = $request->highlights;
 
         if($request->hasFile('image')){
+            if(!empty($news->Hinh)){
+                unlink("upload/tintuc/".$news->Hinh);
+            }
             $file = $request->file('image');
             $backFile = $file->getClientOriginalExtension();
-            if($backFile != 'jpg' && $backFile != 'jpeg' && $backFile != 'png'){
+            if($backFile != 'jpg' && $backFile != 'jpeg' && $backFile != 'png' && $backFile != 'gif'){
                 return redirect(route('admin.news.add'))->with('loi','Ban chi duoc chon file co duoi jpg, jpeg, png');
             }
             $name = $file->getClientOriginalName();
@@ -120,7 +123,6 @@ class NewsController extends Controller
                 $image = Str::random(4)."_". $name;
             }
             $file->move("upload/tintuc",$image);
-            unlink("upload/tintuc/".$news->Hinh);
             $news->Hinh = $image;
         }
         $news->save();

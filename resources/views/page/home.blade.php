@@ -49,7 +49,7 @@
                                         <img src="assets/img/trending/trending_top4.jpg" alt="">
                                         <div class="trend-top-cap trend-top-cap2">
                                             <span class="bgg">TECH </span>
-                                            <h2><a href="latest_news.html">Secretart for Economic Air plane that looks like</a></h2>
+                                            <h2><a href="latest_news.html"></a></h2>
                                             <p>by Alice cloe   -   Jun 19, 2020</p>
                                         </div>
                                     </div>
@@ -114,8 +114,8 @@
                                                     </div>
                                                     <div class="whates-caption">
                                                         <h4><a href="tin-tuc/{{$firstNew['id']}}/{{$firstNew['TieuDeKhongDau']}}.html">{{$firstNew['TieuDe']}}</a></h4>
-                                                        <span>by Alice cloe   -   {{$firstNew['created_at']}}</span>
-                                                        <p>{{strip_tags($firstNew['TomTat'])}}</p>
+                                                        <span>{{$firstNew['TieuDe']}}   -   {{$firstNew['created_at']}}</span>
+                                                        <p>{!! $firstNew['TomTat'] !!}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,16 +123,15 @@
                                             <div class="col-xl-6 col-lg-12">
                                                 <div class="row">
                                                     <!-- single -->
-
                                                     @foreach($data->all() as $new)
                                                     <div class="col-xl-12 col-lg-6 col-md-6 col-sm-10">
                                                         <div class="whats-right-single mb-20">
                                                             <div class="whats-right-img">
-                                                                <img width="104px" src="upload/tintuc/{{$new['Hinh']}}" alt="{{$new['NoiDung']}}">
+                                                                <img width="130" height="100" src="upload/tintuc/{{$new['Hinh']}}" alt="{{$new['NoiDung']}}">
                                                             </div>
                                                             <div class="whats-right-cap">
                                                                 <span class="colorb">{{$new->typeNews['Ten']}}</span>
-                                                                <h4><a href="">{{strip_tags($new['TomTat'])}}</a></h4>
+                                                                <h4><a href="tin-tuc/{{$new['id']}}/{{$new['TieuDeKhongDau']}}.html">{!! $new['TieuDe'] !!}</a></h4>
                                                                 <p>{{$new['created_at']}}</p>
                                                             </div>
                                                         </div>
@@ -681,35 +680,9 @@
                 <div class="col-12">
                     <div class="video-items-active">
                         <div class="video-items text-center">
-                            <video controls>
-                                <source src="assets/video/news2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <iframe width="100%" height="515" src="https://www.youtube.com/embed/videoseries?list=PLElOEy0hA_AD3gCUauXdP2hd7EJ-ak9iu" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="video-items text-center">
-                            <video controls>
-                                <source src="assets/video/news1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="video-items text-center">
-                            <video controls>
-                                <source src="assets/video/news3.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="video-items text-center">
-                            <video controls>
-                                <source src="assets/video/news1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="video-items text-center">
-                            <video controls>
-                                <source src="assets/video/news3.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -718,50 +691,30 @@
                     <div class="col-12">
                         <div class="testmonial-nav text-center">
                             <div class="single-video">
-                                <video controls>
-                                    <source src="assets/video/news2.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                                <iframe width="95%" height="160" src="https://www.youtube.com/embed/oigiXW6XyCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
                                     <h4>Old Spondon News - 2020 </h4>
                                 </div>
                             </div>
                             <div class="single-video">
-                                <video controls>
-                                    <source src="assets/video/news1.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                                <iframe width="95%" height="160" src="https://www.youtube.com/embed/HsgTIMDA6ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Banglades News Video </h4>
+                                    <h4>Old Spondon News - 2020 </h4>
                                 </div>
                             </div>
                             <div class="single-video">
-                                <video controls>
-                                    <source src="assets/video/news3.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                                <iframe width="95%" height="160" src="https://www.youtube.com/embed/0VC6euBtKkk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Latest Video - 2020 </h4>
+                                    <h4>Old Spondon News - 2020 </h4>
                                 </div>
                             </div>
                             <div class="single-video">
-                                <video controls>
-                                    <source src="assets/video/news1.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                                <iframe width="95%" height="160" src="https://www.youtube.com/embed/wElFDsqrL50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Spondon News -2019 </h4>
+                                    <h4>Old Spondon News - 2020 </h4>
                                 </div>
                             </div>
-                            <div class="single-video">
-                                <video controls>
-                                    <source src="assets/video/news3.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <div class="video-intro">
-                                    <h4>Latest Video - 2020</h4>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

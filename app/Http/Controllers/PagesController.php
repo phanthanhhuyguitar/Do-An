@@ -52,8 +52,11 @@ class PagesController extends Controller
     public function new($id)
     {
         $new = News::find($id);
+        $previous = News::find(--$id);
+        $id+=2;
+        $next = News::find($id);
         $recentPost = News::where('NoiBat', 0)->orderBy('created_at', 'desc')->take(4)->get();
-        return view('page.latest_news', ['news'=>$new, 'recent'=>$recentPost]);
+        return view('page.latest_news', ['news'=>$new, 'recent'=>$recentPost, 'previou'=>$previous, 'nexts'=>$next]);
     }
 
     public function about()

@@ -35,8 +35,8 @@
                     <td>
                         {{$tp->categories->Ten}}
                     </td>
-                    <td class="center text-primary"><i class="far fa-edit"></i><a href="{{route('admin.type.delete',['id'=>$tp->id])}}"> Delete</a></td>
-                    <td class="center text-danger"><i class="far fa-trash-alt"></i><a style="margin-left: 3px" class="ml-3" href="{{route('admin.type.edit',['id'=>$tp->id])}}">Edit</a></td>
+                    <td class="center text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.type.delete',['id'=>$tp->id])}}"> Delete</a></td>
+                    <td class="center text-success"><i class="far fa-edit"></i><a href="{{route('admin.type.edit',['id'=>$tp->id])}}">Edit</a></td>
                 </tr>
                 @endforeach
                 </tbody>
