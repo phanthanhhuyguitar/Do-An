@@ -58,7 +58,6 @@ class TypeController extends Controller
         $this->validate($request,
             [
                 'newsName' => 'required|unique:LoaiTin,Ten|min:1|max:100',
-
             ],
             [
                 'newsName.required' => 'Ban chua nhap ten loai tin',
@@ -82,6 +81,4 @@ class TypeController extends Controller
 
         return redirect(route('admin.type.list'))->with('thongbao','Ban xoa thanh cong');
     }
-
-
 }

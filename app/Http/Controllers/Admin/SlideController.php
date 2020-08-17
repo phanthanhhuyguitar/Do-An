@@ -53,7 +53,7 @@ class SlideController extends Controller
             $slide->Hinh = "";
         }
         $slide->save();
-        return redirect(route('admin.slide.add'))->with('thongbao','Them thanh cong');
+        return redirect(route('admin.slide.list'))->with('thongbao','Them thanh cong');
 
     }
 
@@ -96,7 +96,7 @@ class SlideController extends Controller
         }
 
         $slide->save();
-        return redirect(route('admin.slide.edit', ['id'=>$id]))->with('thongbao', 'Sua thanh cong');
+        return redirect(route('admin.slide.list'))->with('thongbao', 'Sua thanh cong');
     }
 
     public function getDelete($id)

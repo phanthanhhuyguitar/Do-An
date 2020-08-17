@@ -14,10 +14,10 @@
                             <div class="single-slider">
                                 <div class="trending-top mb-30">
                                     <div class="trend-top-img">
-                                        <img src="upload/slide/{{$sl->Hinh}}" alt="{{$sl->NoiDung}}">
+                                        <img src="upload/slide/{{$sl->Hinh}}" alt="{!! $sl->NoiDung !!}">
                                         <div class="trend-top-cap">
                                             <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">{{$sl->theloai}}</span>
-                                            <h2><a href="latest_news.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">{{$sl->NoiDung}}</a></h2>
+                                            <h2><a href="latest_news.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">{!! $sl->NoiDung !!}</a></h2>
                                             <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">by Alice cloe   -   {{$sl->created_at}}</p>
                                         </div>
                                     </div>

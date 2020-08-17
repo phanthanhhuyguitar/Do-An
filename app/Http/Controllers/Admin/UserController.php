@@ -99,7 +99,6 @@ class UserController extends Controller
         }
         $user->save();
         return redirect(route('admin.user.edit', $id))->with('thongbao', 'Sua thanh cong');
-
     }
 
     public function getDelete($id)
@@ -145,6 +144,5 @@ class UserController extends Controller
     {
         Auth::logout();
         return redirect(route('admin.login'));
-
     }
 }

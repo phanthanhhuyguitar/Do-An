@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
-
     public function getDelete($id,$idNews)
     {
         $comment = Comment::find($id);

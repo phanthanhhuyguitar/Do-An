@@ -11,7 +11,6 @@ use App\Model\TypeNews;
 use App\Model\News;
 use Illuminate\Support\Facades\Auth;
 
-
 class PagesController extends Controller
 {
     //ham do du lieu ra view
@@ -60,7 +59,12 @@ class PagesController extends Controller
                             ->orderBy('created_at', 'desc')
                             ->take(4)
                             ->get();
-        return view('page.latest_news', ['news'=>$new, 'recent'=>$recentPost, 'previou'=>$previous, 'nexts'=>$next]);
+        return view('page.latest_news', [
+            'news'=>$new,
+            'recent'=>$recentPost,
+            'previou'=>$previous,
+            'nexts'=>$next
+        ]);
     }
 
     public function about()

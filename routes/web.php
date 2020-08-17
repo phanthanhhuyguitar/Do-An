@@ -18,19 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*---------Login-----------*/
-
-//Route::group([
-//    'prefix' => 'admin',
-//    'as' => 'admin.',
-//    //duoc chi dinh mot nhom controller admin
-//    'namespace'=>'Admin'
-//],function (){
     Route::get('admin/login', 'Admin\UserController@loginAdmin')->name('admin.login');
     Route::post('admin/handle-login','Admin\UserController@handleLogin')->name('admin.handleLogin');
     Route::get('admin/logout', 'Admin\UserController@logout')->name('admin.logout');
-//});
-
 
 /*---------Index Dashboard-----------*/
 Route::group([
@@ -41,15 +31,11 @@ Route::group([
     'namespace'=>'Admin',
 ],function (){
     /*===========DASHBOARD============*/
-
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-
     /*===========CATEGORY============*/
     Route::group([
         'prefix' => 'category'
-
     ],function (){
-
 //        get de ta goi form sua ra va post giup ta them gui data len
         Route::get('list','CategoryController@getList')->name('category.list');
 
@@ -61,7 +47,6 @@ Route::group([
 
         Route::get('delete/{id}','CategoryController@getDelete')->name('category.delete');
     });
-
     /*===========TYPE============*/
     Route::group([
         'prefix' => 'type'
@@ -77,7 +62,6 @@ Route::group([
 
         Route::get('delete/{id}','TypeController@getDelete')->name('type.delete');
     });
-
     /*===========NEWS============*/
     Route::group([
         'prefix' => 'news'
@@ -93,15 +77,12 @@ Route::group([
 
         Route::get('delete/{id}','NewsController@getDelete')->name('news.delete');
     });
-
     /*===========COMMENT============*/
     Route::group([
         'prefix' => 'comment',
     ],function (){
-
         Route::get('delete/{idc}~{idNews}','CommentController@getDelete')->name('comment.delete');
     });
-
     /*===========SLIDER============*/
     Route::group([
         'prefix' => 'slide'
@@ -117,7 +98,6 @@ Route::group([
 
         Route::get('delete/{id}','SlideController@getDelete')->name('slide.delete');
     });
-
     /*===========USER============*/
     Route::group([
         'prefix' => 'user'
@@ -136,9 +116,7 @@ Route::group([
 
         Route::get('profile', 'UserController@profileAdmin')->name('profile');
     });
-
     /*===========SEARCH============*/
-
     Route::group([
         'prefix' => 'search'
         ], function (){
@@ -175,15 +153,9 @@ Route::post('nguoi-dung', 'PagesController@postUser')->name('handle-user-info');
 
 Route::post('comment/{id}', 'Admin\CommentController@postController');
 
-
 Route::get('tim-kiem', 'PagesController@getSearch')->name('search');
 
-
-
-
 Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');

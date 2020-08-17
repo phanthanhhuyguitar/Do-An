@@ -69,16 +69,12 @@ class CategoryController extends Controller
         $cate->save();
 
         return redirect(route('admin.category.list'))->with('thongbao','Sua thanh cong');
-
     }
 
     public function getDelete($id)
     {
         $cate = Categories::find($id);
         $cate->delete();
-
         return redirect(route('admin.category.list'))->with('thongbao','Ban xoa thanh cong');
     }
-
-
 }

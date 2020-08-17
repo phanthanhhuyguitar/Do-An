@@ -16,7 +16,7 @@ class NewsController extends Controller
     public function getList()
     {
         $news = News::orderBy('id', 'DESC')
-                        ->paginate(5);
+                    ->paginate(5);
         return view('admin.news.list', ['new'=>$news]);
     }
 
@@ -135,7 +135,6 @@ class NewsController extends Controller
     {
         $news = News::find($id);
         $news->delete();
-
 
         return redirect(route('admin.news.list'))->with('thongbao','Xoa thanh cong');
     }
