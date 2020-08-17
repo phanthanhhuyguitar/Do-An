@@ -5,8 +5,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">News
-                    <small>Add</small>
+                <h1 class="page-header">Tin tức :
+                    <small>Thêm</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -21,7 +21,7 @@
                 <form action="{{route('admin.news.handle.add')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>Category</label>
+                        <label>Thể loại :</label>
                         <select class="form-control" name="category" id="caTe">
                             <option>--- Root ---</option>
                             @foreach($caTe as $ct)
@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>News Type</label>
+                        <label>Loại tin :</label>
                         <select class="form-control" name="typenews" id="news">
                             <option>--- Root ---</option>
                             @foreach($tyPe as $tp)
@@ -40,25 +40,25 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Title</label>
+                        <label>Tiêu đề :</label>
                         <input class="form-control" name="title" placeholder="Please Enter Title">
                     </div>
                     <div class="form-group">
-                        <label>Summary</label>
+                        <label>Mô tả :</label>
                         <textarea name="post_content" id="post_content" rows="10" cols="150" class="form-control" rows="150"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Content</label>
+                        <label>Nội dung :</label>
                         <textarea name="post_content_1" id="post_content_1" rows="10" cols="150" class="form-control" rows="150"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Image</label>
+                        <label>Hình ảnh :</label>
                         <input class="form-control" type="file" name="image">
                     </div>
 
                     <div class="form-group">
-                        <label>Highlights</label>
+                        <label>Nổi bật :</label>
                         <label class="radio-inline">
                             <input name="highlights" value="0" checked="" type="radio">Enabled
                         </label>
@@ -66,8 +66,8 @@
                             <input name="highlights" value="1" type="radio">Disabled
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success">Add</button>
-                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-success">Thêm</button>
+                    <button type="reset" class="btn btn-primary">Thoát</button>
                 </form>
             </div>
         </div>

@@ -11,7 +11,9 @@
                             <div class="row justify-content-between align-items-end mb-15">
                                 <div class="col-xl-6">
                                     <div class="section-tittle mb-30">
-                                        <h3>Tìm kiếm : {{$key}}</h3>
+                                        <h3 class="page-header">Tìm kiếm :
+                                            <small>{{$key}}</small>
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +34,7 @@
                                                             <div class="whates-caption whates-caption2">
                                                                 <h4><a href="tin-tuc/{{$nw->id}}/{{$nw->TieuDeKhongDau}}.html">{{$nw->TieuDe}}</a></h4>
                                                                 <span>by Alice cloe   -   {{$nw->created_at}}</span>
-                                                                <p>{{strip_tags($nw->TomTat)}}</p>
+                                                                <p>{!! strip_tags($nw->TomTat) !!}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -102,9 +104,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="single-wrap">
-                            @if(count($new) > 6)
-                            {{$new->links()}}
-                            @endif
+                            {{ $new->appends(Request::all())->links() }}
                         </div>
                     </div>
                 </div>

@@ -8,14 +8,15 @@
             <a href="{{route('admin.dashboard')}}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Liên hệ</a>
         </li>
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
+    <form class="form-inline ml-3" method="get" action="{{route('admin.handle-search')}}">
+        @csrf
         <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control form-control-navbar" type="search" name="keySearch" placeholder="Tìm kiếm..." aria-label="Search">
             <div class="input-group-append">
                 <button class="btn btn-navbar" type="submit">
                     <i class="fas fa-search"></i>

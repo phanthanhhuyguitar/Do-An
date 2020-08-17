@@ -5,8 +5,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>List</small>
+                <h1 class="page-header">Thể loại :
+                    <small>Danh sách</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -19,10 +19,10 @@
                 <thead>
                 <tr>
                     <th class="text-center">ID</th>
-                    <th class="text-center">Name</th>
+                    <th class="text-center">Tên</th>
                     <th class="text-center">Slug</th>
-                    <th class="text-center">Delete</th>
-                    <th class="text-center">Edit</th>
+                    <th class="text-center">Xóa</th>
+                    <th class="text-center">Sửa</th>
                 </tr>
                 </thead>
                 <tbody>

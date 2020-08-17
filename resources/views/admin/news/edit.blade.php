@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">News
+                    <h1 class="page-header">Tin tức :
                         <small>{{$new->TieuDe}}</small>
                     </h1>
                 </div>
@@ -27,7 +27,7 @@
                     <form action="{{route('admin.news.handle.edit', ['id'=>$new->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Category</label>
+                            <label>Thể loại :</label>
                             <select class="form-control" name="category" id="caTe">
                                 <option>--- Root ---</option>
                                 @foreach($caTe as $ct)
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>News Type</label>
+                            <label>Loại tin :</label>
                             <select class="form-control" name="typenews" id="news">
                                 <option>--- Root ---</option>
                                 @foreach($tyPe as $tp)
@@ -54,26 +54,26 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Title</label>
+                            <label>Tiêu đề :</label>
                             <input class="form-control" name="title" placeholder="Please Enter Title" value="{{$new->TieuDe}}" >
                         </div>
                         <div class="form-group">
-                            <label>Summary</label>
+                            <label>Mô tả :</label>
                             <textarea name="post_content" id="post_content" rows="10" cols="150" class="form-control" rows="150">{{$new->TomTat}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label>Content</label>
+                            <label>Nội dung :</label>
                             <textarea name="post_content_1" id="post_content_1" rows="10" cols="150" class="form-control" rows="150">{{$new->NoiDung}}</textarea>
                         </div>
 
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Hình ảnh :</label>
                             <p><img width="400px" src="{{asset("upload/tintuc/$new->Hinh")}}" alt=""></p>
                             <input class="form-control" type="file" name="image">
                         </div>
 
                         <div class="form-group">
-                            <label>Highlights</label>
+                            <label>Nổi bật :</label>
                             <label class="radio-inline">
                                 <input name="highlights" value="0"
                                        @if($new->NoiBat == 0)
@@ -89,17 +89,17 @@
                                        type="radio">Disabled
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-success">Edit</button>
-                        <button type="reset" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-success">Sửa</button>
+                        <button type="reset" class="btn btn-primary">Thoát</button>
                     </form>
                 </div>
             </div>
             <!-- /.row -->
-
+            <hr>
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Comment
-                        <small>List</small>
+                    <h1 class="page-header">Bình luận :
+                        <small>Danh sách</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -112,10 +112,10 @@
                     <thead>
                     <tr align="center">
                         <th>ID</th>
-                        <th>User</th>
-                        <th>Content</th>
-                        <th>Post Date</th>
-                        <th>Delete</th>
+                        <th>Người dùng</th>
+                        <th>Nội dung</th>
+                        <th>Ngày đăng</th>
+                        <th>Xóa</th>
                     </tr>
                     </thead>
                     <tbody>

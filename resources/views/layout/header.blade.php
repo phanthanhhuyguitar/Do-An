@@ -97,7 +97,7 @@
                             <div class="search-model-box">
                                 <div class="d-flex align-items-center h-100 justify-content-center">
                                     <div class="search-close-btn">+</div>
-                                    <form class="search-model-form" action="{{route('search')}}" method="post">
+                                    <form class="search-model-form" action="{{route('search')}}" method="get">
                                         @csrf
                                         <input type="text" name="keySearch" id="search-input" placeholder="Searching key.....">
                                         <button class="btn" type="submit">Tìm kiếm</button>

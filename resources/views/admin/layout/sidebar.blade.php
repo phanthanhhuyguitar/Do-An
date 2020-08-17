@@ -14,7 +14,7 @@
                 <img src="{{asset('admin-asset/dist-1/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">{{Auth::user()->name}}</a>
             </div>
         </div>
 
@@ -32,8 +32,7 @@
                 <li class="nav-item has-treeview">
                     <a href="{{route('admin.category.list')}}" class="nav-link">
                         <i class="far fa-file-alt"></i>
-                        <p>
-                            Category
+                        <p>Thể loại
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -41,13 +40,13 @@
                         <li class="nav-item">
                             <a href="{{route('admin.category.list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List Category</p>
+                                <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('admin.category.add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Category</p>
+                                <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
@@ -57,7 +56,7 @@
                     <a href="{{route('admin.type.list')}}" class="nav-link">
                         <i class="far fa-sticky-note"></i>
                         <p>
-                            News Type
+                            Loại tin
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -65,13 +64,13 @@
                         <li class="nav-item">
                             <a href="{{route('admin.type.list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List News Type</p>
+                                <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('admin.type.add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add News Type</p>
+                                <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
@@ -81,7 +80,7 @@
                     <a href="{{route('admin.news.list')}}" class="nav-link">
                         <i class="far fa-newspaper"></i>
                         <p>
-                            News
+                            Tin tức
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -89,13 +88,13 @@
                         <li class="nav-item">
                             <a href="{{route('admin.news.list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List News</p>
+                                <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('admin.news.add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add News</p>
+                                <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
@@ -113,13 +112,13 @@
                         <li class="nav-item">
                             <a href="{{route('admin.slide.list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List Slide</p>
+                                <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('admin.slide.add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Slide</p>
+                                <p>Thêm</p>
                             </a>
                         </li>
                     </ul>
@@ -137,13 +136,13 @@
                         <li class="nav-item">
                             <a href="{{route('admin.user.list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List User</p>
+                                <p>Danh sách</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('admin.user.add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add User</p>
+                                <p>Thêm</p>
                             </a>
                         </li>
                     </ul>

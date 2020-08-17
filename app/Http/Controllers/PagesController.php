@@ -45,7 +45,8 @@ class PagesController extends Controller
     public function typeNews($id)
     {
         $type = TypeNews::find($id);
-        $new = News::where('idLoaiTin', $id)->paginate(6);
+        $new = News::where('idLoaiTin', $id)
+                    ->paginate(6);
         return view('page.type_news', ['tyPe'=>$type, 'news'=>$new]);
     }
 
@@ -55,7 +56,10 @@ class PagesController extends Controller
         $previous = News::find(--$id);
         $id+=2;
         $next = News::find($id);
-        $recentPost = News::where('NoiBat', 0)->orderBy('created_at', 'desc')->take(4)->get();
+        $recentPost = News::where('NoiBat', 0)
+                            ->orderBy('created_at', 'desc')
+                            ->take(4)
+                            ->get();
         return view('page.latest_news', ['news'=>$new, 'recent'=>$recentPost, 'previou'=>$previous, 'nexts'=>$next]);
     }
 
@@ -89,7 +93,8 @@ class PagesController extends Controller
 
             ]);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->pass])) {
-            $user = User::whereemail($request->email)->first();
+            $user = User::whereemail($request->email)
+                        ->first();
             Auth::login($user);
             return redirect(route('home'));
         } else{
@@ -177,10 +182,14 @@ class PagesController extends Controller
         return redirect(route('user-sign-up'))->with('thongbao','Them tai khoan thanh cong');
     }
 
-    public function search(Request $request)
+    public function getSearch(Request $request)
     {
-        $key = $request->keySearch;
-        $new = News::where('TieuDe','like',"%$key%")->orwhere('TomTat','like',"%$key%")->orwhere('NoiDung', 'like',"%$key%")->take(30)->paginate(5);
+        $key = $request->get('keySearch');
+        $new = News::where('TieuDe','like',"%$key%")
+                    ->orwhere('TomTat','like',"%$key%")
+                    ->orwhere('NoiDung', 'like',"%$key%")
+                    ->take(30)
+                    ->paginate(6);
         return view('page.search', ['new' => $new, 'key' => $key]);
     }
 }

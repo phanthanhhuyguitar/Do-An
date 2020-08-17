@@ -548,7 +548,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="small-tittle mb-30">
-                                        <h4>Most Popular</h4>
+                                        <h4>Phổ biến nhất</h4>
                                     </div>
                                 </div>
                             </div>
@@ -614,7 +614,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle mb-30">
-                            <h3>Trending  News</h3>
+                            <h3>Tin tức xu hướng</h3>
                         </div>
                     </div>
                 </div>

@@ -5,8 +5,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">News Type
-                    <small>Add</small>
+                <h1 class="page-header">Loại tin :
+                    <small>Thêm</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -27,7 +27,7 @@
                 <form action="{{route('admin.type.handle.add')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Category</label>
+                        <label>Thể loại</label>
                         <select class="form-control" name="category">
                             @foreach($caTe as $ct)
                                 <option value="{{$ct->id}}">{{$ct->Ten}}</option>
@@ -35,11 +35,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Name News Type</label>
+                        <label>Tên loại tin</label>
                         <input class="form-control" name="cateName" placeholder="Please Enter Category Name">
                     </div>
-                    <button type="submit" class="btn btn-success">Add</button>
-                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-success">Thêm</button>
+                    <button type="reset" class="btn btn-primary">Xóa</button>
                 </form>
             </div>
         </div>

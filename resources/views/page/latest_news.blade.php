@@ -33,8 +33,8 @@
                         </div>
                         <div class="navigation-top">
                             <div class="d-sm-flex justify-content-between text-center">
-                                <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
-                                    people like this</p>
+                                <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily và 4
+                                    người thích điều này</p>
                                 <div class="col-sm-4 text-center my-2 my-sm-0">
                                     <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
                                 </div>
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                                    <button type="submit" class="button button-contactForm btn_1 boxed-btn">Gửi</button>
                                 </div>
                             </form>
                         </div>
@@ -213,14 +213,14 @@
                                 </ul>
                             </aside>
                             <aside class="single_sidebar_widget newsletter_widget">
-                                <h4 class="widget_title">Newsletter</h4>
+                                <h4 class="widget_title">Phản hồi</h4>
                                 <form action="#">
                                     <div class="form-group">
                                         <input type="email" class="form-control" onfocus="this.placeholder = ''"
                                                onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
                                     </div>
                                     <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                            type="submit">Subscribe</button>
+                                            type="submit">Gửi</button>
                                 </form>
                             </aside>
                         </div>

@@ -5,8 +5,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">User
-                    <small>List</small>
+                <h1 class="page-header">User :
+                    <small>Danh sách</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -19,11 +19,11 @@
                 <thead class="thead-light">
                 <tr align="center">
                     <th scope="col" class="text-center">ID</th>
-                    <th scope="col" class="text-center">Name</th>
+                    <th scope="col" class="text-center">Tên</th>
                     <th scope="col" class="text-center">Email</th>
-                    <th scope="col" class="text-center">Level</th>
-                    <th scope="col" class="text-center">Delete</th>
-                    <th scope="col" class="text-center">Edit</th>
+                    <th scope="col" class="text-center">Quyền</th>
+                    <th scope="col" class="text-center">Xóa</th>
+                    <th scope="col" class="text-center">Sửa</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,8 +40,8 @@
                         @endif
 
                     </td>
-                    <td class="center text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.user.delete',['id'=>$us->id])}}"> Delete</a></td>
-                    <td class="center text-primary"><i class="far fa-edit"></i><a style="margin-left: 3px" href="{{route('admin.user.edit',['id'=>$us->id])}}">Edit</a></td>
+                    <td class="center text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.user.delete',['id'=>$us->id])}}">Xóa</a></td>
+                    <td class="center text-success"><i class="far fa-edit"></i><a style="margin-left: 3px" href="{{route('admin.user.edit',['id'=>$us->id])}}">Sửa</a></td>
                 </tr>
                 @endforeach
                 </tbody>

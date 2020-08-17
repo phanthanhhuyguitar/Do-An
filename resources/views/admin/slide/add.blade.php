@@ -5,8 +5,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Slide
-                        <small>Add</small>
+                    <h1 class="page-header">Slide :
+                        <small>Thêm</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -27,26 +27,26 @@
                     <form action="{{route('admin.slide.handle.add')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" name="name" placeholder="Please Enter Name">
+                            <label>Tên :</label>
+                            <input class="form-control" name="name" placeholder="Nhâp tên...">
                         </div>
                         <div class="form-group">
-                            <label>Content</label>
+                            <label>Nội dung :</label>
                             <textarea name="post_content_1" id="post_content_1" rows="10" cols="150" class="form-control" rows="150"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label>Category</label>
-                            <input type="text" class="form-control" name="category" placeholder="Please Enter Category">
+                            <label>Thể loại :</label>
+                            <input type="text" class="form-control" name="category" placeholder="Nhập thể loại...">
                         </div>
 
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Hình ảnh :</label><span>(750 x 645)</span>
                             <input class="form-control" type="file" name="image">
                         </div>
 
-                        <button type="submit" class="btn btn-success">Add</button>
-                        <button type="reset" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <button type="reset" class="btn btn-primary">Thoát</button>
                     </form>
                 </div>
             </div>

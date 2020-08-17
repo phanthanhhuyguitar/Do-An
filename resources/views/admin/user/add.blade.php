@@ -5,8 +5,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">User
-                    <small>Add</small>
+                <h1 class="page-header">User :
+                    <small>Thêm</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -27,32 +27,33 @@
                 <form action="{{route('admin.user.handle.add')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Name</label>
-                        <input class="form-control" name="name" placeholder="Please Enter Your Name">
+                        <label>Tên :</label>
+                        <input class="form-control" name="name" placeholder="Nhâp tên...">
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Please Enter Your Email">
+                        <label>Email :</label>
+                        <input type="email" class="form-control" name="email" placeholder="Nhập email...">
                     </div>
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Please Enter Your Password">
+                        <label>Mật khẩu :</label>
+                        <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu...">
                     </div>
                     <div class="form-group">
-                        <label>Enter the password</label>
-                        <input type="password"  class="form-control" name="passwordAgain" placeholder="Please Enter the password">
+                        <label>Nhập lại mật khẩu :</label>
+                        <input type="password"  class="form-control" name="passwordAgain" placeholder="Nhập lại mật khẩu...">
                     </div>
                     <div class="form-group">
-                        <label>Power</label>
+                        <label>Quyền :</label>
                         <label for="ad" class="radio-inline">
                             <input type="radio" id="ad" name="power" value="0">Admin
                         </label>
+                        |
                         <label for="pn" class="radio-inline">
                             <input type="radio" id="pn" name="power" value="1" checked="">Personal
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success">Create</button>
-                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-success">Tạo</button>
+                    <button type="reset" class="btn btn-primary">Thoát</button>
                 </form>
             </div>
         </div>

@@ -5,9 +5,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-hea">News
-                    <small>List</small>
-                    <a class="btn-success btn" href="{{route('admin.news.add')}}">Add <i class="far fa-plus-square"></i></a>
+                <h1 class="page-hea">Tin tức :
+                    <small>Danh sách</small>
+                    <a class="btn-success btn" href="{{route('admin.news.add')}}">Thêm <i class="far fa-plus-square"></i></a>
                 </h1>
                 <div class="ml-auto text-right">
 
@@ -24,25 +24,25 @@
                 <thead>
                 <tr align="center">
                     <th class="text-center">ID</th>
-                    <th class="text-center">Title</th>
-                    <th class="text-center">Description</th>
-                    <th class="text-center">Category</th>
-                    <th class="text-center">Type</th>
-                    <th class="text-center">Viewers</th>
-                    <th class="text-center">Highlights</th>
-                    <th class="text-center">Delete</th>
-                    <th class="text-center">Edit</th>
+                    <th class="text-center">Tiêu đề</th>
+                    <th class="text-center">Mô tả</th>
+                    <th class="text-center">Thể lọai</th>
+                    <th class="text-center">Loại tin</th>
+                    <th class="text-center">Số người xem</th>
+                    <th class="text-center">Nổi bật</th>
+                    <th class="text-center">Xóa</th>
+                    <th class="text-center">Sửa</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($new as $ns)
                 <tr class="odd gradeX" align="center">
                     <td>{{$ns->id}}</td>
-                    <td>
+                    <td width="20%">
                         <p>{{$ns->TieuDe}}</p>
                         <img width="100px" src="{{asset("upload/tintuc/$ns->Hinh")}}" alt="">
                     </td>
-                    <td>{!! strip_tags($ns->TomTat) !!}</td>
+                    <td width="20%">{!! strip_tags($ns->TomTat) !!}</td>
                     {{--tro theo ten ham trong model lien ket--}}
                     <td>{{$ns->typeNews->categories->Ten}}</td>
                     <td>{{$ns->typeNews->Ten}}</td>

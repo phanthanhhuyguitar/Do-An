@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">News Type
+                <h1 class="page-header">Loại tin :
                     <small>{{$tyPe -> Ten}}</small>
                 </h1>
             </div>
@@ -26,7 +26,7 @@
                 <form action="{{route('admin.type.handle.edit',['id'=>$tyPe->id])}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Category</label>
+                        <label>Thể loại :</label>
                         <select class="form-control" name="category">
                             @foreach($caTe as $ct)
                                 <option
@@ -39,12 +39,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>News Name</label>
+                        <label>Tên loại tin :</label>
                         <input class="form-control" value="{{$tyPe->Ten}}" name="newsName" placeholder="Please Enter News Type Name">
                     </div>
 
-                    <button type="submit" class="btn btn-success">Edit</button>
-                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-success">Sửa</button>
+                    <button type="reset" class="btn btn-primary">Xóa</button>
                 </form>
             </div>
         </div>

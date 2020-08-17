@@ -1,6 +1,8 @@
 <?php
 
+use App\Model\News;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -135,12 +137,22 @@ Route::group([
         Route::get('profile', 'UserController@profileAdmin')->name('profile');
     });
 
+    /*===========SEARCH============*/
+
+    Route::group([
+        'prefix' => 'search'
+        ], function (){
+             Route::get('tim-kiem','SearchController@search')->name('handle-search');
+        }
+    );
+
     /*===========AJAX============*/
     Route::group([
         'prefix' => 'ajax'
         ], function (){
 
             Route::get('type/{idCate}','AjaxController@getType')->name('ajax.type');
+
         }
     );
 });
@@ -162,8 +174,9 @@ Route::get('nguoi-dung', 'PagesController@getUser')->name('user-info');
 Route::post('nguoi-dung', 'PagesController@postUser')->name('handle-user-info');
 
 Route::post('comment/{id}', 'Admin\CommentController@postController');
-Route::get('tim-kiem/{key}', 'PagesController@search')->name('search');
-Route::post('tim-kiem', 'PagesController@search')->name('search');
+
+
+Route::get('tim-kiem', 'PagesController@getSearch')->name('search');
 
 
 
