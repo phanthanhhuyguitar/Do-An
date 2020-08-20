@@ -693,25 +693,25 @@
                             <div class="single-video">
                                 <iframe width="95%" height="160" src="https://www.youtube.com/embed/oigiXW6XyCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Old Spondon News - 2020 </h4>
+                                    <h4>View : 41.156.872 lượt xem</h4>
                                 </div>
                             </div>
                             <div class="single-video">
                                 <iframe width="95%" height="160" src="https://www.youtube.com/embed/HsgTIMDA6ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Old Spondon News - 2020 </h4>
+                                    <h4>View : 26.146.544 lượt xem</h4>
                                 </div>
                             </div>
                             <div class="single-video">
                                 <iframe width="95%" height="160" src="https://www.youtube.com/embed/0VC6euBtKkk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Old Spondon News - 2020 </h4>
+                                    <h4>View : 59.069.009 lượt xem</h4>
                                 </div>
                             </div>
                             <div class="single-video">
                                 <iframe width="95%" height="160" src="https://www.youtube.com/embed/wElFDsqrL50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="video-intro">
-                                    <h4>Old Spondon News - 2020 </h4>
+                                    <h4>View : 4.123.124 lượt xem</h4>
                                 </div>
                             </div>
 

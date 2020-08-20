@@ -47,8 +47,8 @@
                             </div>
                             <div class="navigation-area">
                                 <div class="row">
-                                    <div
-                                        class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                                    @if(!empty($previou))
+                                    <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                         <div class="thumb">
                                             <a href="tin-tuc/{{$previou->id}}/{{$previou->TieuDeKhongDau}}.html">
                                                 <img style="height:100%;width: 100%" class="img-fluid" src="upload/tintuc/{{$previou->Hinh}}" alt="">
@@ -61,7 +61,9 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div
+                                    @endif
+                                    @if(!empty($nexts))
+                                        <div
                                         class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                         <div class="detials">
                                             <p>Tin sau</p>
@@ -74,7 +76,8 @@
                                                 <img style="height:100%;width: 100%" class="img-fluid" src="upload/tintuc/{{$nexts->Hinh}}" alt="">
                                             </a>
                                         </div>
-                                    </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -85,7 +88,11 @@
                                 <div class="single-comment justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb">
-                                            <img src="assets/img/comment/comment_1.png" alt="">
+                                            @if(empty($nsc->user->Hinh))
+                                                <img src="assets/img/comment/default-avatar.png" alt="">
+                                            @else
+                                                <img src="upload/avatar/{{$nsc->user->Hinh}}" alt="">
+                                            @endif
                                         </div>
                                         <div class="desc">
                                             <p class="comment">
@@ -120,7 +127,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                        placeholder="Write Comment"></textarea>
+                                        placeholder="Viết bình luận"></textarea>
                                         </div>
                                     </div>
                                 </div>

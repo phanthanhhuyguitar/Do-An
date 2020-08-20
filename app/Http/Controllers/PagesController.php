@@ -149,6 +149,15 @@ class PagesController extends Controller
         return redirect(route('user-info'))->with('thongbao', 'Sua thanh cong');
     }
 
+    public function newFeed()
+    {
+        $newFeed = News::where('NoiBat', 0)
+            ->orderBy('created_at', 'desc')
+            ->take(20)
+            ->paginate(5);
+        return view('page.new', ['newF'=>$newFeed]);
+    }
+
     public function getSignUp()
     {
         return view('page.sign_up');
@@ -180,7 +189,7 @@ class PagesController extends Controller
         $user->name = $request->nameU;
         $user->email = $request->emailU;
         $user->password = bcrypt($request->pass); //bcrypt: ma hoa mat khau
-        $user->level = 0;
+        $user->level = 1;//nguoi dung
         $user->save();
 
         return redirect(route('user-sign-up'))->with('thongbao','Them tai khoan thanh cong');

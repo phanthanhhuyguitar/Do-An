@@ -24,7 +24,7 @@
                         {{session('thongbao')}}
                     </div>
                 @endif
-                <form action="{{route('admin.user.handle.edit', ['id'=>$user->id])}}" method="POST">
+                <form action="{{route('admin.user.handle.edit', ['id'=>$user->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Tên :</label>
@@ -42,6 +42,10 @@
                     <div class="form-group">
                         <label>Nhập lại mật khẩu :</label>
                         <input type="password" disabled class="form-control password" name="passwordAgain">
+                    </div>
+                    <div class="form-group">
+                        <label>Avatar :</label>
+                        <input class="form-control" type="file" name="image">
                     </div>
                     <div class="form-group">
                         <label>Quyền :</label>

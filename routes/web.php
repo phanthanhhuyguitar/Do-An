@@ -143,8 +143,11 @@ Route::get('loai-tin/{id}/{TenKhongDau}.html', 'PagesController@typeNews')->name
 Route::get('the-loai/{id}/{TenKhongDau}.html', 'PagesController@category')->name('category');
 Route::get('tin-tuc/{id}/{TenKhongDau}.html', 'PagesController@new')->name('new');
 Route::get('about', 'PagesController@about')->name('about');
+route::get('tin-moi', 'PagesController@newFeed')->name('new-feed');
 
 /*===========USERS============*/
+Route::get('dang-ki', 'PagesController@getSignUp')->name('user-sign-up');
+Route::post('dang-ki', 'PagesController@postSignUp')->name('handle-user-sign-up');
 Route::get('dang-nhap', 'PagesController@getLogin')->name('user-login');
 Route::post('dang-nhap', 'PagesController@postLogin')->name('handle-user-login');
 Route::get('dang-xuat', 'PagesController@getLogout')->name('user-logout');

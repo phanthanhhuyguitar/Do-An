@@ -20,6 +20,7 @@
                 <tr align="center">
                     <th scope="col" class="text-center">ID</th>
                     <th scope="col" class="text-center">Tên</th>
+                    <th scope="col" class="text-center">Avatar</th>
                     <th scope="col" class="text-center">Email</th>
                     <th scope="col" class="text-center">Quyền</th>
                     <th scope="col" class="text-center">Xóa</th>
@@ -29,10 +30,11 @@
                 <tbody>
                 @foreach($user as $us)
                 <tr class="odd gradeX" align="center">
-                    <td>{{$us->id}}</td>
-                    <td>{{$us->name}}</td>
-                    <td>{{$us->email}}</td>
-                    <td>
+                    <td class="align-middle">{{$us->id}}</td>
+                    <td class="align-middle">{{$us->name}}</td>
+                    <td><img width="80" style="border-radius: 50%" src="{{asset("upload/avatar/$us->Hinh")}}" alt=""></td>
+                    <td class="align-middle">{{$us->email}}</td>
+                    <td class="align-middle">
                         @if($us->level == 0)
                         {{"Admin"}}
                         @else
@@ -40,8 +42,8 @@
                         @endif
 
                     </td>
-                    <td class="center text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.user.delete',['id'=>$us->id])}}">Xóa</a></td>
-                    <td class="center text-success"><i class="far fa-edit"></i><a style="margin-left: 3px" href="{{route('admin.user.edit',['id'=>$us->id])}}">Sửa</a></td>
+                    <td class="center align-middle text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.user.delete',['id'=>$us->id])}}">Xóa</a></td>
+                    <td class="center align-middle text-success"><i class="far fa-edit"></i><a style="margin-left: 3px" href="{{route('admin.user.edit',['id'=>$us->id])}}">Sửa</a></td>
                 </tr>
                 @endforeach
                 </tbody>

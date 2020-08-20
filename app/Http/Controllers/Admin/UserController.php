@@ -52,6 +52,22 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password); //bcrypt: ma hoa mat khau
         $user->level = $request->power;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $backFile = $file->getClientOriginalExtension();
+            if($backFile != 'jpg' && $backFile != 'jpeg' && $backFile != 'png'){
+                return redirect(route('admin.user.add'))->with('loi','Ban chi duoc chon file co duoi jpg, jpeg, png');
+            }
+            $name = $file->getClientOriginalName();
+            $image = Str::random(4)."_". $name;
+            while (file_exists("upload/avatar/".$image)){
+                $image = Str::random(4)."_". $name;
+            }
+            $file->move("upload/avatar", $image);
+            $user->Hinh = $image;
+        }else{
+            $user->Hinh = "";
+        }
         $user->save();
 
         return redirect(route('admin.user.add'))->with('thongbao','Them tai khoan thanh cong');
@@ -96,6 +112,23 @@ class UserController extends Controller
                 ]);
 
             $user->password = bcrypt($request->password); //bcrypt: ma hoa mat khau
+        }
+        if($request->hasFile('image')){
+            if(!empty($news->Hinh)){
+                unlink("upload/avatar/".$news->Hinh);
+            }
+            $file = $request->file('image');
+            $backFile = $file->getClientOriginalExtension();
+            if($backFile != 'jpg' && $backFile != 'jpeg' && $backFile != 'png'){
+                return redirect(route('admin.user.add'))->with('loi','Ban chi duoc chon file co duoi jpg, jpeg, png');
+            }
+            $name = $file->getClientOriginalName();
+            $image = Str::random(4)."_". $name;
+            while (file_exists("upload/avatar/".$image)){
+                $image = Str::random(4)."_". $name;
+            }
+            $file->move("upload/avatar",$image);
+            $user->Hinh = $image;
         }
         $user->save();
         return redirect(route('admin.user.edit', $id))->with('thongbao', 'Sua thanh cong');

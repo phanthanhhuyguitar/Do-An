@@ -3,7 +3,7 @@
     <ul class="list cat-list">
         @foreach($cate as $ct)
             <li>
-                <a href="#" class="d-flex">
+                <a href="the-loai/{{$ct->id}}/{{$ct->TenKhongDau}}}.html" class="d-flex">
                     <p>{{$ct->Ten}} </p>
                     <p>({{count($ct->typeNews)}})</p>
                 </a>

@@ -37,17 +37,17 @@
                 <tbody>
                 @foreach($new as $ns)
                 <tr class="odd gradeX" align="center">
-                    <td>{{$ns->id}}</td>
-                    <td width="20%">
+                    <td class="align-middle">{{$ns->id}}</td>
+                    <td class="align-middle" width="20%">
                         <p>{{$ns->TieuDe}}</p>
                         <img width="100px" src="{{asset("upload/tintuc/$ns->Hinh")}}" alt="">
                     </td>
-                    <td width="20%">{!! strip_tags($ns->TomTat) !!}</td>
+                    <td class="align-middle" width="20%">{!! strip_tags($ns->TomTat) !!}</td>
                     {{--tro theo ten ham trong model lien ket--}}
-                    <td>{{$ns->typeNews->categories->Ten}}</td>
-                    <td>{{$ns->typeNews->Ten}}</td>
-                    <td>{{$ns->SoLuotXem}}</td>
-                    <td>
+                    <td class="align-middle">{{$ns->typeNews->categories->Ten}}</td>
+                    <td class="align-middle">{{$ns->typeNews->Ten}}</td>
+                    <td class="align-middle">{{$ns->SoLuotXem}}</td>
+                    <td class="align-middle">
                         @if($ns->NoiBat == 0)
                             <i class="text-success fas fa-check"></i>
                         @endif
@@ -55,8 +55,8 @@
                             <i class="text-danger fas fa-times"></i>
                         @endif
                     </td>
-                    <td class="center text-danger"><i class="far fa-trash-alt"></i><a class="ml-1" href="{{route('admin.news.delete',['id'=>$ns->id])}}">Delete</a></td>
-                    <td class="center text-info"><i class="far fa-edit"></i><a class="ml-1" href="{{route('admin.news.edit',['id'=>$ns->id])}}">Edit</a></td>
+                    <td class="center align-middle text-danger"><i class="far fa-trash-alt"></i><a class="ml-1" href="{{route('admin.news.delete',['id'=>$ns->id])}}">Delete</a></td>
+                    <td class="center align-middle text-info"><i class="far fa-edit"></i><a class="ml-1" href="{{route('admin.news.edit',['id'=>$ns->id])}}">Edit</a></td>
                 </tr>
                 @endforeach
                 </tbody>

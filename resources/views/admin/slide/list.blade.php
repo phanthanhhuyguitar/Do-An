@@ -30,15 +30,15 @@
                 <tbody>
                 @foreach($slide as $sl )
                 <tr class="odd gradeX" align="center">
-                    <td>{{$sl->id}}</td>
-                    <td>{{$sl->Ten}}</td>
-                    <td>{!! $sl->NoiDung !!}</td>
-                    <td>
+                    <td class="align-middle">{{$sl->id}}</td>
+                    <td width="20%" class="align-middle">{{$sl->Ten}}</td>
+                    <td width="20%" class="align-middle">{!! $sl->NoiDung !!}</td>
+                    <td class="align-middle">
                         <img width="350px" src="{{asset("upload/slide/$sl->Hinh")}}" alt="">
                     </td>
-                    <td>{{$sl->theloai}}</td>
-                    <td class="center text-danger"><i class="far fa-trash-alt"></i><a style="margin-left: 3px" href="{{route('admin.slide.delete',['id'=>$sl->id])}}">Xóa</a></td>
-                    <td class="center text-success"><i class="far fa-edit"></i><a style="margin-left: 3px" href="{{route('admin.slide.edit',['id'=>$sl->id])}}">Sửa</a></td>
+                    <td class="align-middle">{{$sl->theloai}}</td>
+                    <td class="center align-middle text-danger"><i class="far fa-trash-alt"></i><a style="margin-left: 3px" href="{{route('admin.slide.delete',['id'=>$sl->id])}}">Xóa</a></td>
+                    <td class="center align-middle text-success"><i class="far fa-edit"></i><a style="margin-left: 3px" href="{{route('admin.slide.edit',['id'=>$sl->id])}}">Sửa</a></td>
                 </tr>
                  @endforeach
                 </tbody>

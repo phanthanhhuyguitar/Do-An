@@ -29,14 +29,14 @@
                 <tbody>
                 @foreach($tyPe as $tp)
                 <tr class="odd gradeX" align="center">
-                    <td>{{$tp->id}}</td>
-                    <td>{{$tp->Ten}}</td>
-                    <td>{{$tp->TenKhongDau}}</td>
-                    <td>
+                    <td class="align-middle">{{$tp->id}}</td>
+                    <td class="align-middle">{{$tp->Ten}}</td>
+                    <td class="align-middle">{{$tp->TenKhongDau}}</td>
+                    <td class="align-middle">
                         {{$tp->categories->Ten}}
                     </td>
-                    <td class="center text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.type.delete',['id'=>$tp->id])}}"> Delete</a></td>
-                    <td class="center text-success"><i class="far fa-edit"></i><a href="{{route('admin.type.edit',['id'=>$tp->id])}}">Edit</a></td>
+                    <td class="center align-middle text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.type.delete',['id'=>$tp->id])}}"> Delete</a></td>
+                    <td class="center align-middle text-success"><i class="far fa-edit"></i><a href="{{route('admin.type.edit',['id'=>$tp->id])}}">Edit</a></td>
                 </tr>
                 @endforeach
                 </tbody>

@@ -28,11 +28,11 @@
                 <tbody>
                 @foreach($caTe as $ct)
                 <tr class="odd gradeX" align="center">
-                    <td>{{$ct->id}}</td>
-                    <td>{{$ct->Ten}}</td>
-                    <td>{{$ct->TenKhongDau}}</td>
-                    <td class="center text-danger"><i class="far fa-trash-alt"></i><a href="{{route('admin.category.delete',['id'=>$ct->id])}}"> Delete</a></td>
-                    <td class="center text-success"><i class="far fa-edit"></i><a href="{{route('admin.category.edit',['id'=>$ct->id])}}">Edit</a></td>
+                    <td class="align-middle">{{$ct->id}}</td>
+                    <td class="align-middle">{{$ct->Ten}}</td>
+                    <td class="align-middle">{{$ct->TenKhongDau}}</td>
+                    <td class="center align-middle text-danger"><i class="far fa-trash-alt"></i><a href="{{route('admin.category.delete',['id'=>$ct->id])}}"> Delete</a></td>
+                    <td class="center align-middle text-success"><i class="far fa-edit"></i><a href="{{route('admin.category.edit',['id'=>$ct->id])}}">Edit</a></td>
                 </tr>
                 @endforeach
                 </tbody>
