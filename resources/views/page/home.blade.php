@@ -35,9 +35,8 @@
                                     <div class="trend-top-img">
                                         <img src="assets/img/trending/trending_top3.jpg" alt="">
                                         <div class="trend-top-cap trend-top-cap2">
-                                            <span class="bgb">FASHION</span>
-                                            <h2><a href="latest_news.html">Secretart for Economic Air
-                                                    plane that looks like</a></h2>
+                                            <span class="bgb">THỜI TRANG</span>
+                                            <h2><a href="latest_news.html"> Hãy quyết định bạn là ai</a></h2>
                                             <p>by Alice cloe   -   Jun 19, 2020</p>
                                         </div>
                                     </div>
@@ -48,8 +47,8 @@
                                     <div class="trend-top-img">
                                         <img src="assets/img/trending/trending_top4.jpg" alt="">
                                         <div class="trend-top-cap trend-top-cap2">
-                                            <span class="bgg">TECH </span>
-                                            <h2><a href="latest_news.html"></a></h2>
+                                            <span class="bgg">CÔNG NGHỆ </span>
+                                            <h2><a href="latest_news.html">Tôi nhìn kỹ thuật bằng con mắt của khách hàng.</a></h2>
                                             <p>by Alice cloe   -   Jun 19, 2020</p>
                                         </div>
                                     </div>

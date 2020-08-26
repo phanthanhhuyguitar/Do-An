@@ -60,12 +60,9 @@
                                             @endforeach
 
                                         </ul>
-
-
-
                                     </li>
                                     <li><a href="{{route('new-feed')}}">Tin mới</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <li><a href="#">Trang</a>
                                         <ul class="submenu">
                                             <li><a href="{{route('blog')}}">Blog</a></li>
                                             <li><a href="blog_details.html">Blog Details</a></li>

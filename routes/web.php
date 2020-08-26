@@ -157,8 +157,3 @@ Route::post('nguoi-dung', 'PagesController@postUser')->name('handle-user-info');
 Route::post('comment/{id}', 'Admin\CommentController@postController');
 
 Route::get('tim-kiem', 'PagesController@getSearch')->name('search');
-
-Auth::routes();
-
-Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
-Route::get('/callback/{provider}', 'SocialController@callback');

@@ -38,7 +38,7 @@ class PagesController extends Controller
 
     public function contact()
     {
-        return view('page.contact');
+        return view('page.contact_cv');
     }
 
     public function typeNews($id)
