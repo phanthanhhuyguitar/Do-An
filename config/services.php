@@ -30,6 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+        'client_id' => '900416607033750',
+        'client_secret' => 'cfaed7aeaa2b7d18aa6800ca986b75be',
+        'redirect' => 'https://newgt.dev.todo/callback/facebook',
+    ],
 
 
 ];

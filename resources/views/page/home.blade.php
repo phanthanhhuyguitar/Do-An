@@ -17,7 +17,7 @@
                                         <img src="upload/slide/{{$sl->Hinh}}" alt="{!! $sl->NoiDung !!}">
                                         <div class="trend-top-cap">
                                             <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">{{$sl->theloai}}</span>
-                                            <h2><a href="latest_news.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">{!! $sl->NoiDung !!}</a></h2>
+                                            <h2><a href="https://ncov.moh.gov.vn/" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms" target="_blank">{!! $sl->NoiDung !!}</a></h2>
                                             <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">by Alice cloe   -   {{$sl->created_at}}</p>
                                         </div>
                                     </div>
@@ -33,7 +33,7 @@
                             <div class="col-lg-12 col-md-6 col-sm-6">
                                 <div class="trending-top mb-30">
                                     <div class="trend-top-img">
-                                        <img src="assets/img/trending/trending_top3.jpg" alt="">
+                                        <img src="assets/img/trending/trending_top5.jpg" alt="">
                                         <div class="trend-top-cap trend-top-cap2">
                                             <span class="bgb">THỜI TRANG</span>
                                             <h2><a href="latest_news.html"> Hãy quyết định bạn là ai</a></h2>
@@ -490,40 +490,35 @@
                     <div class="most-recent-area">
                         <!-- Section Tittle -->
                         <div class="small-tittle mb-20">
-                            <h4>Most Recent</h4>
+                            <h4>Gần đây nhất</h4>
                         </div>
+                        <?php
+                        $data = $reCen->where('NoiBat', 0)->sortByDesc('created_at')->take(3);
+                        $firstNew = $data->shift();
+                        //shift ham nay la mang nen in ra ta phai in key cua no ra
+                        ?>
                         <!-- Details -->
                         <div class="most-recent mb-40">
                             <div class="most-recent-img">
-                                <img src="assets/img/gallery/most_recent.png" alt="">
+                                <img src="upload/tintuc/{{$firstNew['Hinh']}}" alt="">
                                 <div class="most-recent-cap">
-                                    <span class="bgbeg">Vogue</span>
-                                    <h4><a href="latest_news.html">What to Wear: 9+ Cute Work <br>
-                                            Outfits to Wear This.</a></h4>
-                                    <p>Jhon  |  2 hours ago</p>
+                                    <h4><a href="tin-tuc/{{$firstNew['id']}}/{{$firstNew['TieuDeKhongDau']}}.html">{!! $firstNew['TieuDe'] !!}</a></h4>
+                                    <p>{{$firstNew['created_at']}}</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Single -->
+                        @foreach($data->all() as $dt)
                         <div class="most-recent-single">
                             <div class="most-recent-images">
-                                <img src="assets/img/gallery/most_recent1.png" alt="">
+                                <img width="130" src="upload/tintuc/{{$dt['Hinh']}}" alt="">
                             </div>
                             <div class="most-recent-capt">
-                                <h4><a href="latest_news.html">Scarlett’s disappointment at latest accolade</a></h4>
-                                <p>Jhon  |  2 hours ago</p>
+                                <h4><a href="tin-tuc/{{$dt['id']}}/{{$dt['TieuDeKhongDau']}}.html">{{$dt['TieuDe']}}</a></h4>
+                                <p>{{$dt['created_at']}}</p>
                             </div>
                         </div>
-                        <!-- Single -->
-                        <div class="most-recent-single">
-                            <div class="most-recent-images">
-                                <img src="assets/img/gallery/most_recent2.png" alt="">
-                            </div>
-                            <div class="most-recent-capt">
-                                <h4><a href="latest_news.html">Most Beautiful Things to Do in Sidney with Your BF</a></h4>
-                                <p>Jhon  |  3 hours ago</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

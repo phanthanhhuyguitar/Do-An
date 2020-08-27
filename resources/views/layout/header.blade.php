@@ -27,7 +27,7 @@
                     <!-- Logo -->
                     <div class="col-xl-3 col-lg-3 col-md-3 d-none d-md-block">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            <a href="{{route('home')}}"><img src="assets/img/logo/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-9 col-lg-9 col-md-9">
@@ -52,8 +52,6 @@
                                 <ul id="navigation">
                                     <li><a href="{{route('home')}}">Trang chủ</a></li>
                                     <li><a>Thể loại</a>
-
-
                                         <ul class="submenu">
                                             @foreach($cate as $ct)
                                             <li><a href="the-loai/{{$ct->id}}/{{$ct->TenKhongDau}}}.html">{{$ct->Ten}}</a></li>
@@ -62,7 +60,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="{{route('new-feed')}}">Tin mới</a></li>
-                                    <li><a href="#">Trang</a>
+                                    <li><a href="">Trang</a>
                                         <ul class="submenu">
                                             <li><a href="{{route('blog')}}">Blog</a></li>
                                             <li><a href="blog_details.html">Blog Details</a></li>

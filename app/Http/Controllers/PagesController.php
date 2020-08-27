@@ -28,7 +28,8 @@ class PagesController extends Controller
 
     public function home()
     {
-        return view('page.home');
+        $recently = News::all();
+        return view('page.home', ['reCen' => $recently]);
     }
 
     public function blog()

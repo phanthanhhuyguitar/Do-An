@@ -31,6 +31,7 @@ Route::group([
     'namespace'=>'Admin',
 ],function (){
     /*===========DASHBOARD============*/
+    Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     /*===========CATEGORY============*/
     Route::group([
@@ -157,3 +158,14 @@ Route::post('nguoi-dung', 'PagesController@postUser')->name('handle-user-info');
 Route::post('comment/{id}', 'Admin\CommentController@postController');
 
 Route::get('tim-kiem', 'PagesController@getSearch')->name('search');
+
+Auth::routes();
+
+
+
+Route::get('/', function () {
+    return view('facebookLogin');
+});
+Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('auth/callback/facebook', 'Auth\LoginController@handleFacebookCallback');
+?>
