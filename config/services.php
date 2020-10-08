@@ -31,9 +31,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '900416607033750',
-        'client_secret' => 'cfaed7aeaa2b7d18aa6800ca986b75be',
-        'redirect' => 'https://newgt.dev.todo/callback/facebook',
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => 'https://newgt.dev.todo/login/facebook/callback',
     ],
 
 

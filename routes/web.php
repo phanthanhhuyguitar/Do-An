@@ -161,11 +161,5 @@ Route::get('tim-kiem', 'PagesController@getSearch')->name('search');
 
 Auth::routes();
 
-
-
-Route::get('/', function () {
-    return view('facebookLogin');
-});
-Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebook');
-Route::get('auth/callback/facebook', 'Auth\LoginController@handleFacebookCallback');
-?>
+Route::get('/login/facebook', 'Auth\LoginController@redirectToProvider')->name('login-facebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

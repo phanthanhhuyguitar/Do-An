@@ -48,7 +48,7 @@
                                         <img src="assets/img/trending/trending_top4.jpg" alt="">
                                         <div class="trend-top-cap trend-top-cap2">
                                             <span class="bgg">CÔNG NGHỆ </span>
-                                            <h2><a href="latest_news.html">Tôi nhìn kỹ thuật bằng con mắt của khách hàng.</a></h2>
+                                            <h2><a href="the-loai/10/cong-nghe.html">Tôi nhìn kỹ thuật bằng con mắt của khách hàng.</a></h2>
                                             <p>by Alice cloe   -   Jun 19, 2020</p>
                                         </div>
                                     </div>

@@ -12,7 +12,7 @@
 					</span>
 
                     <div>
-                        <a href="{{ url('auth/facebook') }}" class="btn-login-with bg1 m-b-10">
+                        <a href="{{route('login-facebook')}}" class="btn-login-with bg1 m-b-10">
                             <i class="fa fa-facebook-official"></i>
                             Login with Facebook
                         </a>
