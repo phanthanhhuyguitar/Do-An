@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Login;
+use App\Social;
 use App\User;
 use App\UserView;
 use Illuminate\Http\Request;
@@ -10,6 +12,8 @@ use App\Model\Slider;
 use App\Model\TypeNews;
 use App\Model\News;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+use Session;
 
 class PagesController extends Controller
 {
@@ -100,6 +104,7 @@ class PagesController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->pass])) {
             $user = User::whereemail($request->email)
                         ->first();
+            dd($user);
             Auth::login($user);
             return redirect(route('home'));
         } else{
@@ -206,4 +211,51 @@ class PagesController extends Controller
                     ->paginate(6);
         return view('page.search', ['new' => $new, 'key' => $key]);
     }
+
+    public function login_facebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function callback_facebook()
+    {
+        $provider = Socialite::driver('facebook')->user();
+        $account = Social::where('provider','facebook')->where('provider_user_id',$provider->getId())->first();
+        if($account){
+
+            $account_name = Login::where('id',$account->user)->first();
+            auth()->loginUsingId($account_name->id);
+            return redirect(route('home'));//->with('message', 'Đăng nhập Admin thành công')
+        }else{
+
+            $huy = new Social([
+                'provider_user_id' => $provider->getId(),
+                'provider' => 'facebook'
+            ]);
+
+            $orang = Login::where('email',$provider->getEmail())->first();
+
+            if(!$orang){
+                $orang = Login::create([
+                    'name' => $provider->getName(),
+                    'email' => $provider->getEmail(),
+                    'password' => '',
+                    'Hinh' => ''
+
+                ]);
+            }
+            $huy->login()->associate($orang);
+            $huy->save();
+
+            $account_name = Login::where('id',$account->user)->first();
+            //dang nhap bang id
+            auth()->loginUsingId($account_name->id);
+//            Session::put('name',$account_name->name);
+//            Session::put('id',$account_name->id);
+            return redirect('/trang-chu');//->with('message', 'Đăng nhập Admin thành công')
+            //doi https trong app facebook de dung duoc dang nhap cho nguoi khac
+        }
+
+    }
+
 }
