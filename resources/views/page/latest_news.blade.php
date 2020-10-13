@@ -38,11 +38,12 @@
                                 <div class="col-sm-4 text-center my-2 my-sm-0">
                                     <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
                                 </div>
-                                <ul class="social-icons">
-                                    <li><a href="#"><i class="far fa-thumbs-up"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                </ul>
+                                {{--nut like--}}
+                                <div class="d-block">
+                                    <div class="fb-like" data-href="{{$canonical}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="false"></div>
+                                    {{--nut share--}}
+                                    <div class="fb-share-button" data-href="http://localhost:8000/trang-chu" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{$canonical}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+                                </div>
                             </div>
                             <div class="navigation-area">
                                 <div class="row">

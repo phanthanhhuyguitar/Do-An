@@ -27,8 +27,16 @@
                 <form action="{{route('admin.category.handle.add')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label>Tên thể loại</label>
+                        <label>Tên thể loại :</label>
                         <input class="form-control" name="cateName" placeholder="Nhập tên thể loại" />
+                    </div>
+                    <div class="form-group">
+                        <label for="desc-category">Mô tả danh mục :</label>
+                        <textarea style="resize: none" name="cate_product_desc" class="form-control" id="desc-category" rows="8" placeholder="Mô tả danh mục"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc-category">Từ khóa danh mục :</label>
+                        <textarea style="resize: none" name="cate_product_keyword" class="form-control" id="desc-category" rows="8" placeholder="Từ khóa danh mục"></textarea>
                     </div>
                     <button type="submit" class="btn btn-success">Thêm</button>
                     <button type="reset" class="btn btn-primary">Xóa</button>

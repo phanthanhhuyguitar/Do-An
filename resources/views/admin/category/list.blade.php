@@ -20,7 +20,8 @@
                 <tr>
                     <th class="text-center">ID</th>
                     <th class="text-center">Tên</th>
-                    <th class="text-center">Slug</th>
+                    <th class="text-center">Mô tả</th>
+                    <th class="text-center">Từ khóa</th>
                     <th class="text-center">Xóa</th>
                     <th class="text-center">Sửa</th>
                 </tr>
@@ -30,7 +31,8 @@
                 <tr class="odd gradeX" align="center">
                     <td class="align-middle">{{$ct->id}}</td>
                     <td class="align-middle">{{$ct->Ten}}</td>
-                    <td class="align-middle">{{$ct->TenKhongDau}}</td>
+                    <td class="align-middle">{{$ct->meta_desc}}</td>
+                    <td class="align-middle">{{$ct->meta_keywords}}</td>
                     <td class="center align-middle text-danger"><i class="far fa-trash-alt"></i><a href="{{route('admin.category.delete',['id'=>$ct->id])}}"> Delete</a></td>
                     <td class="center align-middle text-success"><i class="far fa-edit"></i><a href="{{route('admin.category.edit',['id'=>$ct->id])}}">Edit</a></td>
                 </tr>

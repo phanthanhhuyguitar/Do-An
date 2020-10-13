@@ -30,10 +30,21 @@ class PagesController extends Controller
         }
     }
 
-    public function home()
+    public function home(Request $request)
     {
+        $meta_desc = "Trang tin tức giải trí - xã hội Việt Nam - Quốc Tế. Đưa tin nhanh nhất : thời trang, video ngôi sao, phim ảnh, tình yêu, học đường, các chuyển động xã hội.";
+        $meta_keywords = "teen viet nam, giới trẻ, xu hướng, âm nhạc, xem phim, đời sống, hàng hiệu, chuyện lạ, thời trang trẻ, mới lớn, đang yêu, sành điệu, chuyện cười, khéo tay, các sao";
+        $meta_title = "Trang cung cấp thông tin chính thống";
+        $url_canonical = $request->url();
         $recently = News::all();
-        return view('page.home', ['reCen' => $recently]);
+        //return view('page.home', ['reCen' => $recently], ['desc' => $meta_desc], ['keyword' => $meta_keywords], ['title' => $meta_title], ['canonical' => $url_canonical]);
+        //thay url
+        return view('page.home')
+                ->with('reCen', $recently)
+                ->with('desc', $meta_desc)
+                ->with('keyword', $meta_keywords)
+                ->with('title', $meta_title)
+                ->with('canonical', $url_canonical);
     }
 
     public function blog()
@@ -54,9 +65,14 @@ class PagesController extends Controller
         return view('page.type_news', ['tyPe'=>$type, 'news'=>$new]);
     }
 
-    public function new($id)
+    public function new(Request $request, $id)
     {
         $new = News::find($id);
+
+        $meta_keywords = $new->meta_keywords;//error
+        $meta_title = $new->Ten;//error
+        $meta_desc = $new->meta_desc;//error
+        $url_canonical = $request->url();
         $previous = News::find(--$id);
         $id+=2;
         $next = News::find($id);
@@ -69,7 +85,10 @@ class PagesController extends Controller
             'recent'=>$recentPost,
             'previou'=>$previous,
             'nexts'=>$next
-        ]);
+        ])  ->with('desc', $meta_desc)
+            ->with('keyword', $meta_keywords)
+            ->with('title', $meta_title)
+            ->with('canonical', $url_canonical);
     }
 
     public function about()
@@ -77,10 +96,18 @@ class PagesController extends Controller
         return view('page.about');
     }
 
-    public function category($id)
+    public function category(Request $request, $id)
     {
         $cate = Categories::find($id);
-        return view('page.category', ['caTe'=>$cate]);
+        $meta_keywords = $cate->meta_keywords;
+        $meta_title = $cate->Ten;
+        $meta_desc = $cate->meta_desc;
+        $url_canonical = $request->url();
+        return view('page.category', ['caTe'=>$cate])
+                ->with('desc', $meta_desc)
+                ->with('keyword', $meta_keywords)
+                ->with('title', $meta_title)
+                ->with('canonical', $url_canonical);
     }
 
     public function getLogin()
@@ -250,8 +277,7 @@ class PagesController extends Controller
             $account_name = Login::where('id',$account->user)->first();
             //dang nhap bang id
             auth()->loginUsingId($account_name->id);
-//            Session::put('name',$account_name->name);
-//            Session::put('id',$account_name->id);
+
             return redirect('/trang-chu');//->with('message', 'Đăng nhập Admin thành công')
             //doi https trong app facebook de dung duoc dang nhap cho nguoi khac
         }

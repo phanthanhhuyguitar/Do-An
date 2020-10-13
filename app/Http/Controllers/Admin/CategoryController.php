@@ -37,7 +37,9 @@ class CategoryController extends Controller
             ]
         );
         $cate = new Categories;
+        $cate -> meta_keywords = $request->cate_product_keyword;
         $cate -> Ten = $request->cateName;
+        $cate -> meta_desc = $request->cate_product_desc;
         $cate -> TenKhongDau = changeTitle($request->cateName);
         $cate -> save();
 
@@ -64,7 +66,9 @@ class CategoryController extends Controller
             'cateName.max' => 'Ten the loai toi da 100 ky tu ',
         ]
         );
+        $cate -> meta_keywords = $request->cate_product_keyword;
         $cate -> Ten = $request -> cateName;
+        $cate -> meta_desc = $request->cate_product_desc;
         $cate -> TenKhongDau = changeTitle($request->cateName);
         $cate->save();
 

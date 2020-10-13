@@ -29,6 +29,14 @@
                         <label>Tên thể loại :</label>
                         <input class="form-control" value="{{$cate->Ten}}" name="cateName" placeholder="Please Enter Category Name" >
                     </div>
+                    <div class="form-group">
+                        <label for="desc-category">Mô tả danh mục :</label>
+                        <textarea style="resize: none" name="cate_product_desc" value="{{$cate->meta_desc}}" class="form-control" id="desc-category" rows="8"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc-category">Từ khóa danh mục :</label>
+                        <textarea style="resize: none" name="cate_product_keyword" value="{{$cate->meta_keywords}}" class="form-control" id="desc-category" rows="8"></textarea>
+                    </div>
                     <button type="submit" class="btn btn-success">Sửa</button>
                     <button type="reset" class="btn btn-primary">Xóa</button>
                 </form>

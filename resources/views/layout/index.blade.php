@@ -4,11 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>News  HTML-5 Template </title>
-    <meta name="description" content="">
+    {{--SEO--}}
+    <meta name="description" content="{{ $desc }}">
+    <meta name="keywords" content="{{ $keyword }}">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <link rel="canonical" href="{{ $canonical }}">
+    <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{asset('')}}">
+
+
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <base href="{{asset('')}}">
+
+{{--    <meta property="og:site_name" content="http://localhost:8000/trang-chu">--}}
+{{--    <meta property="og:description" content="{{$meta_desc}}">--}}
+{{--    <meta property="og:title" content="{{$meta_title}}">--}}
+{{--    <meta property="og:url" content="{{$meta_canonical}}">--}}
+{{--    <meta property="og:type" content="website">--}}
 
     <script data-ad-client="ca-pub-6041994811184344" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -124,7 +137,8 @@
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
 
-
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=556144601718270&autoLogAppEvents=1" nonce="Otdf9KRr"></script>
 @stack('javascript')
 </body>
 </html>
