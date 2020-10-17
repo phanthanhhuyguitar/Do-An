@@ -131,7 +131,6 @@ class PagesController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->pass])) {
             $user = User::whereemail($request->email)
                         ->first();
-            dd($user);
             Auth::login($user);
             return redirect(route('home'));
         } else{
@@ -250,14 +249,15 @@ class PagesController extends Controller
         $account = Social::where('provider','facebook')->where('provider_user_id',$provider->getId())->first();
         if($account){
 
-            $account_name = Login::where('id',$account->user)->first();
-            auth()->loginUsingId($account_name->id);
+            $account_name = Login::where('id',$account->user_id)->first();
+            Auth::loginUsingId($account_name->id);
+//            auth()->loginUsingId();
             return redirect(route('home'));//->with('message', 'Đăng nhập Admin thành công')
         }else{
 
             $huy = new Social([
                 'provider_user_id' => $provider->getId(),
-                'provider' => 'facebook'
+                'provider' => 'facebook',
             ]);
 
             $orang = Login::where('email',$provider->getEmail())->first();
@@ -274,9 +274,9 @@ class PagesController extends Controller
             $huy->login()->associate($orang);
             $huy->save();
 
-            $account_name = Login::where('id',$account->user)->first();
+            $account_name = Login::where('id',$account->user_id)->first();
             //dang nhap bang id
-            auth()->loginUsingId($account_name->id);
+            Auth::loginUsingId($account_name->id);
 
             return redirect('/trang-chu');//->with('message', 'Đăng nhập Admin thành công')
             //doi https trong app facebook de dung duoc dang nhap cho nguoi khac

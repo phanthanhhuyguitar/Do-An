@@ -5,10 +5,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>News  HTML-5 Template </title>
     {{--SEO--}}
-    <meta name="description" content="{{ $desc }}">
-    <meta name="keywords" content="{{ $keyword }}">
+    <meta name="description" content="">{{--{{ $desc }}--}}
+    <meta name="keywords" content="">{{--{{ $keyword }}--}}
     <meta name="robots" content="INDEX,FOLLOW">
-    <link rel="canonical" href="{{ $canonical }}">
+    <link rel="canonical" href="">{{--{{ $canonical }}--}}
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="{{asset('')}}">
