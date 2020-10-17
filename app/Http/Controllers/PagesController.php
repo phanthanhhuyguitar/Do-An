@@ -267,6 +267,7 @@ class PagesController extends Controller
                     'name' => $provider->getName(),
                     'email' => $provider->getEmail(),
                     'password' => '',
+                    'level' => '1',
                     'Hinh' => ''
 
                 ]);
