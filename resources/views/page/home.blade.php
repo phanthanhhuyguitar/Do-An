@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- Trending Top -->
-                        <div class="slider-active">
+                         <div class="slider-active">
                             <!-- Single -->
                             @foreach($slide as $sl)
                             <div class="single-slider">
@@ -16,7 +16,7 @@
                                     <div class="trend-top-img">
                                         <img src="upload/slide/{{$sl->Hinh}}" alt="{!! $sl->NoiDung !!}">
                                         <div class="trend-top-cap">
-                                            <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">{{$sl->theloai}}</span>
+                                            <span class="bgr" data-animation="fadeInUp" data-delay=".2s" data-duration="1000ms">{{$sl->categories->Ten}}</span>
                                             <h2><a href="https://ncov.moh.gov.vn/" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms" target="_blank">{!! $sl->NoiDung !!}</a></h2>
                                             <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">by Alice cloe   -   {{$sl->created_at}}</p>
                                         </div>
