@@ -162,6 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,   	//cho provider
+        //export excle
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
 
         // Other service providers…
@@ -232,6 +234,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // Other aliases…
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,       //cho alias
+        //expost excel
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
 
 

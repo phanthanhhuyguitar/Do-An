@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Model\Slider;
+use Excel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -178,4 +180,5 @@ class UserController extends Controller
         Auth::logout();
         return redirect(route('admin.login'));
     }
+
 }

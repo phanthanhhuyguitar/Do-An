@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Input;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//export file excel
+Route::get('export.html', ['as' => 'admin.export','uses' => 'ExportController@export'] );
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,6 +33,8 @@ Route::group([
     //duoc chi dinh mot nhom controller admin
     'namespace'=>'Admin',
 ],function (){
+//    Route::get('export', 'ExportController@export')->name('export');
+
     /*===========DASHBOARD============*/
     Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');

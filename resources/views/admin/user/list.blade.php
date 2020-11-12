@@ -4,10 +4,13 @@
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">User :
+            <div class="col-lg-12 d-flex">
+                <h1 class="page-header w-auto">User :
                     <small>Danh sách</small>
                 </h1>
+                <div class="ml-auto mt-2">
+                    <a href="{{ route('admin.export') }}" class="btn btn-success">Export Excel</a>
+                </div>
             </div>
             <!-- /.col-lg-12 -->
             @if(session('thongbao'))
