@@ -45,7 +45,7 @@
                         @endif
 
                     </td>
-                    <td class="center align-middle text-danger "><i class="far fa-trash-alt"></i><a href="{{route('admin.user.delete',['id'=>$us->id])}}">Xóa</a></td>
+                    <td class="center align-middle text-danger "><i class="far fa-trash-alt"></i><a style="margin-left: 3px" href="{{route('admin.user.delete',['id'=>$us->id])}}">Xóa</a></td>
                     <td class="center align-middle text-success"><i class="far fa-edit"></i><a style="margin-left: 3px" href="{{route('admin.user.edit',['id'=>$us->id])}}">Sửa</a></td>
                 </tr>
                 @endforeach
