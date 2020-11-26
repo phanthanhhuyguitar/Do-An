@@ -156,32 +156,18 @@
                                 @endforeach
                             </aside>
                             <aside class="single_sidebar_widget tag_cloud_widget">
-                                <h4 class="widget_title">Tag Clouds</h4>
+                                <h4 class="widget_title">Tag</h4>
                                 <ul class="list">
+                                    <?php
+                                        $tagAll = $news->tag;
+                                        $tags = explode(" ", $tagAll);
+                                    ?>
+{{--                                    {{dd($tags[4])}}--}}
+                                    @foreach($tags as $tg)
                                     <li>
-                                        <a href="#">project</a>
+                                        <a href="#">{{ $tg }}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">love</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">technology</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">travel</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">restaurant</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">life style</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">design</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">illustration</a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </aside>
                             <aside class="single_sidebar_widget instagram_feeds">

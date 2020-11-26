@@ -50,6 +50,7 @@ class NewsController extends Controller
         $news->TieuDe = $request->title;
         $news->TieuDeKhongDau = changeTitle($request->title);
         $news->idLoaiTin = $request->typenews;
+        $news->tag = $request->tag;
         $news->TomTat = $request->post_content;
         $news->NoiDung = $request->post_content_1;
         $news->SoLuotXem = 0;
@@ -105,6 +106,7 @@ class NewsController extends Controller
         $news->TieuDeKhongDau = changeTitle($request->title);
         $news->TomTat = $request->post_content;
         $news->idLoaiTin = $request->typenews;
+        $news->tag = $request->tag;
         $news->NoiDung = $request->post_content_1;
         $news->NoiBat = $request->highlights;
 

@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin-asset/img/favicon.ico')}}">
 
     <title>AdminLTE 3 | Dashboard 3</title>
     <!-- Font Awesome Icons -->

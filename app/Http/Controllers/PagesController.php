@@ -14,6 +14,7 @@ use App\Model\News;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Session;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -68,7 +69,6 @@ class PagesController extends Controller
     public function new(Request $request, $id)
     {
         $new = News::find($id);
-
         $meta_keywords = $new->meta_keywords;//error
         $meta_title = $new->Ten;//error
         $meta_desc = $new->meta_desc;//error

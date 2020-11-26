@@ -44,6 +44,10 @@
                         <input class="form-control" name="title" placeholder="Please Enter Title">
                     </div>
                     <div class="form-group">
+                        <label>Thẻ tag :</label>
+                        <input class="form-control" name="tag" placeholder="Please Enter Tag">
+                    </div>
+                    <div class="form-group">
                         <label>Mô tả :</label>
                         <textarea name="post_content" id="post_content" rows="10" cols="150" class="form-control" rows="150"></textarea>
                     </div>
