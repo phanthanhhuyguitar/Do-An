@@ -155,21 +155,24 @@
                                 </div>
                                 @endforeach
                             </aside>
+                            <?php
+                                $tagAll = $news->tag;
+                                $tags = explode(",", $tagAll);
+                            ?>
+                            @if($tagAll != null)
                             <aside class="single_sidebar_widget tag_cloud_widget">
-                                <h4 class="widget_title">Tag</h4>
+                                <h4 class="widget_title"><i class="fa fa-tags"></i>Tag</h4>
                                 <ul class="list">
-                                    <?php
-                                        $tagAll = $news->tag;
-                                        $tags = explode(" ", $tagAll);
-                                    ?>
+
 {{--                                    {{dd($tags[4])}}--}}
                                     @foreach($tags as $tg)
                                     <li>
-                                        <a href="#">{{ $tg }}</a>
+                                        <a href="{{url('/tag/'.strip_tags($tg))}}">{{ $tg }}</a>
                                     </li>
                                     @endforeach
                                 </ul>
                             </aside>
+                            @endif
                             <aside class="single_sidebar_widget instagram_feeds">
                                 <h4 class="widget_title">Instagram Feeds</h4>
                                 <ul class="instagram_row flex-wrap">

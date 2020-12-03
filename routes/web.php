@@ -143,13 +143,14 @@ Route::group([
 
 /*===========PAGES============*/
 Route::get('trang-chu', 'PagesController@home')->name('home');
-Route::get('blog', 'PagesController@blog')->name('blog');
 Route::get('lien-he', 'PagesController@contact')->name('contact');
 Route::get('loai-tin/{id}/{TenKhongDau}.html', 'PagesController@typeNews')->name('typeNews');
 Route::get('the-loai/{id}/{TenKhongDau}.html', 'PagesController@category')->name('category');
 Route::get('tin-tuc/{id}/{TenKhongDau}.html', 'PagesController@new')->name('new');
 Route::get('about', 'PagesController@about')->name('about');
 route::get('tin-moi', 'PagesController@newFeed')->name('new-feed');
+Route::get('/tag/{product_tag}', 'PagesController@tags')->name('new-tag');
+Route::get('hot-news', 'PagesController@hotNew')->name('new-hot');
 
 /*===========USERS============*/
 Route::get('dang-ki', 'PagesController@getSignUp')->name('user-sign-up');

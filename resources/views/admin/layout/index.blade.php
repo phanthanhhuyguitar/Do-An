@@ -11,6 +11,9 @@
     <title>AdminLTE 3 | Dashboard 3</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('admin-asset/plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- Tag -->
+    <link rel="stylesheet" href="{{asset('admin-asset/css/bootstrap-tagsinput.css')}}">
+    <link rel="stylesheet" href="{{asset('admin-asset/js/bootstrap-tagsinput.min.js')}}">
     <!-- IonIcons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->

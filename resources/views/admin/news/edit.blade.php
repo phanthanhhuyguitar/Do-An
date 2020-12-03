@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group">
                             <label>Thẻ tag :</label>
-                            <input class="form-control" name="tag" placeholder="Please Enter Tag" value="{{$new->tag}}">
+                            <input class="form-control" data-role="tagsinput" name="tag" placeholder="Please Enter Tag" value="{{$new->tag}}">
                         </div>
                         <div class="form-group">
                             <label>Mô tả :</label>

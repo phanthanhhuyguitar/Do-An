@@ -59,13 +59,25 @@
 
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('new-feed')}}">Tin mới</a></li>
-                                    <li><a href="">Trang</a>
-                                        <ul class="submenu">
-                                            <li><a href="{{route('blog')}}">Blog</a></li>
-                                            <li><a href="blog_details.html">Blog Details</a></li>
-                                            <li><a href="elements.html">Element</a></li>
-                                        </ul>
+                                    <li style="position: relative">
+                                        <img style="position: absolute;
+                                                    top: -10px;
+                                                    left: -13px;
+                                                    width: 57px;
+                                                    height: 45px;
+                                                    z-index: 1;"
+                                                    src="assets/img/sticker/sticker-new.png" alt=""></a>
+                                        <a href="{{route('new-feed')}}">Tin mới</a>
+                                    </li>
+                                    <li style="position: relative">
+                                        <img style="position: absolute;
+                                                    top: -1px;
+                                                    left: -5px;
+                                                    width: 43px;
+                                                    height: 33px;
+                                                    z-index: 1;"
+                                             src="assets/img/sticker/sticker-hot.png" alt=""></a>
+                                        <a href="{{route('new-hot')}}">Tin hot</a>
                                     </li>
                                     <li><a href="{{route('contact')}}">Liên hệ</a></li>
                                     <li><a href="{{route('about')}}">about</a></li>

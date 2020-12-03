@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Login;
+use App\Model\Comment;
 use App\Social;
 use App\User;
 use App\UserView;
@@ -46,11 +47,6 @@ class PagesController extends Controller
                 ->with('keyword', $meta_keywords)
                 ->with('title', $meta_title)
                 ->with('canonical', $url_canonical);
-    }
-
-    public function blog()
-    {
-        return view('page.blog');
     }
 
     public function contact()
@@ -283,6 +279,30 @@ class PagesController extends Controller
             //doi https trong app facebook de dung duoc dang nhap cho nguoi khac
         }
 
+    }
+    public function tags(Request $request, $product_tag)
+    {
+        $tag = $product_tag;
+        $newFeed = News::where('NoiBat', 0)
+            ->where('TieuDe','LIKE','%'.$product_tag.'%')
+            ->orderBy('created_at', 'desc')
+            ->take(20)
+            ->paginate(5);
+        return view('page.tag-news', ['newF'=>$newFeed, 'tg'=>$tag]);
+
+    }
+    public function hotNew()
+    {
+        $temp="";
+        $cm = DB::table('comment')->pluck('idTinTuc');
+        foreach ($cm as $c){
+            $c=$temp;
+            if(){
+
+            }
+        }
+//        $cm->idTinTuc;
+        dd($cm);
     }
 
 }

@@ -45,7 +45,7 @@
                     </div>
                     <div class="form-group">
                         <label>Thẻ tag :</label>
-                        <input class="form-control" name="tag" placeholder="Please Enter Tag">
+                        <input class="form-control" name="tag" placeholder="Please Enter Tag" data-role="tagsinput">
                     </div>
                     <div class="form-group">
                         <label>Mô tả :</label>
