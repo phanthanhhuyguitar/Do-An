@@ -293,16 +293,10 @@ class PagesController extends Controller
     }
     public function hotNew()
     {
-        $temp="";
-        $cm = DB::table('comment')->pluck('idTinTuc');
-        foreach ($cm as $c){
-            $c=$temp;
-            if(){
+//        $a = DB::table('comment')->groupBy('idTinTuc')->get();
+//        $cm_group = DB::select('SELECT * FROM `comment` GROUP by idTinTuc  ');
+        return view('page.new-hot');
 
-            }
-        }
-//        $cm->idTinTuc;
-        dd($cm);
     }
 
 }
